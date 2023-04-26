@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pat_gest/constants/routes.dart';
 import 'package:pat_gest/db/drift_database.dart';
 import 'package:pat_gest/services/crud_service.dart';
+import 'package:pat_gest/utils/pair.dart';
 import 'package:pat_gest/views/visits/visits_data_source.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
@@ -43,7 +44,11 @@ class _VisitsViewState extends State<VisitsView> {
       floatingActionButton: FloatingActionButton(
         heroTag: 'addVisitTag',
         onPressed: () {
-          Navigator.of(context).pushNamed(addVisitRoute);
+          _pushNamed(
+            _calendarController.view == CalendarView.day
+                ? _calendarController.selectedDate
+                : null,
+          );
         },
         child: const Icon(Icons.add),
       ),
@@ -61,9 +66,8 @@ class _VisitsViewState extends State<VisitsView> {
               onLongPress:
                   (CalendarLongPressDetails calendarLongPressDetails) {},
               onTap: (CalendarTapDetails calendarTapDetails) async {
-                if (_calendarController.selectedDate?.hour != 0) {
-                  // TODO: Aggiungi la view add
-                }
+                print('${calendarTapDetails.date}');
+                if (calendarTapDetails.date?.hour != 0) {}
                 setState(() {});
               },
               dataSource: VisitsDataSource(visitsList),
@@ -72,6 +76,13 @@ class _VisitsViewState extends State<VisitsView> {
               ),
             );
           }),
+    );
+  }
+
+  void _pushNamed(DateTime? dateTime) {
+    Navigator.of(context).pushNamed(
+      addVisitRoute,
+      arguments: Pair<Patient?, DateTime?>(null, dateTime),
     );
   }
 
