@@ -6,14 +6,14 @@ import 'package:pat_gest/utils/pair.dart';
 import 'package:pat_gest/views/visits/visits_data_source.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
-class VisitsView extends StatefulWidget {
-  const VisitsView({super.key});
+class MyCalendarView extends StatefulWidget {
+  const MyCalendarView({super.key});
 
   @override
-  State<VisitsView> createState() => _VisitsViewState();
+  State<MyCalendarView> createState() => _MyCalendarViewState();
 }
 
-class _VisitsViewState extends State<VisitsView> {
+class _MyCalendarViewState extends State<MyCalendarView> {
   //TODO: Cambia questo con un default selezionabile dalle opzioni
   final _calendarView = CalendarView.month;
   final _firstDayOfWeek = 1;

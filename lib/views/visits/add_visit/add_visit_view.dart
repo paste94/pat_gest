@@ -7,7 +7,7 @@ import 'package:pat_gest/services/crud_service.dart';
 import 'package:pat_gest/utils/error_alert.dart';
 import 'package:pat_gest/utils/text_divider.dart';
 import 'package:pat_gest/utils/validator.dart';
-import 'package:pat_gest/views/add_visit/visit_duration.dart';
+import 'package:pat_gest/views/visits/add_visit/visit_duration.dart';
 
 class AddVisitView extends StatefulWidget {
   final Patient? patient;

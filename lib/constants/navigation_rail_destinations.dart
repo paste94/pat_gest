@@ -3,7 +3,7 @@ import 'package:pat_gest/utils/my_navigation_rail_destination.dart';
 import 'package:pat_gest/views/offices/offices_list_view.dart';
 import 'package:pat_gest/views/options/options_view.dart';
 import 'package:pat_gest/views/patients/patient_list_view.dart';
-import 'package:pat_gest/views/visits/visits_view.dart';
+import 'package:pat_gest/views/calendar/calendar_view.dart';
 
 import '../views/foods/foods_list_view.dart';
 
@@ -26,7 +26,7 @@ final destinations = <MyNavigationRailDestination>[
   MyNavigationRailDestination(
     icon: const Icon(Icons.calendar_month),
     label: const Text('Calendar'),
-    pageToLoad: const VisitsView(),
+    pageToLoad: const MyCalendarView(),
   ),
   MyNavigationRailDestination(
     icon: const Icon(Icons.settings),

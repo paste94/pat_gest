@@ -4,7 +4,7 @@ import 'package:pat_gest/constants/routes.dart';
 import 'package:pat_gest/db/drift_database.dart';
 import 'package:pat_gest/services/crud_service.dart';
 import 'package:pat_gest/utils/pair.dart';
-import 'package:pat_gest/views/add_visit/add_visit_view.dart';
+import 'package:pat_gest/views/visits/add_visit/add_visit_view.dart';
 import 'package:pat_gest/views/patients/add_patient_view.dart';
 import 'package:pat_gest/views/patients/patient_view.dart';
 import 'package:pat_gest/views/splash_view.dart';

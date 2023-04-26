@@ -9,7 +9,6 @@ import 'package:pat_gest/utils/error_alert.dart';
 import 'package:pat_gest/utils/pair.dart';
 import 'package:pat_gest/utils/text_divider.dart';
 import 'package:pat_gest/views/error/error_view.dart';
-import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class PatientView extends StatefulWidget {
   const PatientView({super.key});
@@ -27,10 +26,6 @@ class _PatientViewState extends State<PatientView> {
   final _notesController = TextEditingController();
   final _heightController = TextEditingController();
   bool _isEnabled = false;
-
-  final _firstDayOfWeek = 1;
-  final _calendarView = CalendarView.schedule;
-  final _calendarController = CalendarController();
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +88,7 @@ class _PatientViewState extends State<PatientView> {
                 runSpacing: spacingConst,
                 children: [
                   const TextDivider(text: 'Personal data'),
+                  // Name Surname
                   Row(
                     children: [
                       // Name
@@ -122,6 +118,7 @@ class _PatientViewState extends State<PatientView> {
                       ),
                     ],
                   ),
+                  // Email and Phone
                   Row(
                     children: [
                       // Email
@@ -151,6 +148,7 @@ class _PatientViewState extends State<PatientView> {
                       ),
                     ],
                   ),
+                  // Height and birth date
                   Row(
                     children: [
                       // Height
