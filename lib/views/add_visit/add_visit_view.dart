@@ -55,7 +55,9 @@ class _AddVisitViewState extends State<AddVisitView> {
     _startTimeController.addListener(_updateEndTime);
     _dateController.text =
         DateFormat(dateFormatConst).format(widget.dateTime ?? DateTime.now());
-    _startTimeController.text = '00:00';
+    _startTimeController.text = widget.dateTime == null
+        ? '00:00'
+        : '${widget.dateTime?.hour.toString().padLeft(2, '0')}:${widget.dateTime?.minute.toString().padLeft(2, '0')}';
   }
 
   @override

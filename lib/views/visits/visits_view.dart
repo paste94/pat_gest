@@ -46,7 +46,11 @@ class _VisitsViewState extends State<VisitsView> {
         onPressed: () {
           _pushNamed(
             _calendarController.view == CalendarView.day
-                ? _calendarController.selectedDate
+                ? DateTime(
+                    _calendarController.selectedDate!.year,
+                    _calendarController.selectedDate!.month,
+                    _calendarController.selectedDate!.day,
+                  )
                 : null,
           );
         },
@@ -67,7 +71,9 @@ class _VisitsViewState extends State<VisitsView> {
                   (CalendarLongPressDetails calendarLongPressDetails) {},
               onTap: (CalendarTapDetails calendarTapDetails) async {
                 print('${calendarTapDetails.date}');
-                if (calendarTapDetails.date?.hour != 0) {}
+                if (calendarTapDetails.date?.hour != 0) {
+                  _pushNamed(calendarTapDetails.date);
+                }
                 setState(() {});
               },
               dataSource: VisitsDataSource(visitsList),
